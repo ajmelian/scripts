@@ -1,0 +1,31 @@
+mail2bash
+=========
+
+Executes the commands in an email if the propper password is provided in that 
+email. Otherwise does nothing.
+
+It is useful when you need to execute basic commands on a server and you 
+can't use SSH. Using this script is dangerous if any password is revelaed
+and since they're send in text plain, I would not recommend this script for
+high security servers.
+
+You can always add signature verification usign GnuPG :) for me it served its
+purpose with my server at home because I couldn't use SSH to connect some years
+ago.
+
+Configure the script with username, password and execute it using cron.
+
+Example of an email containing commands. Default password: "commands"
+
+<commands>
+sync
+reboot
+</commands>
+
+Example usign password "123password"
+
+<123password>
+sync
+reboot
+</123password>
+

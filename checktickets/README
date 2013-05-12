@@ -1,0 +1,17 @@
+CheckTickets
+============
+
+CheckTicket is a very simple script written in less than two minutes some years
+ago to check if a text is or not present in a web. In that case, it sends you a
+reminder email.
+
+I used it to check when certain tickets would be available.
+It does not book them at all :)
+
+Open and edit checktickets.php to configure the scripts. It is very simple.
+
+Observations
+------------
+
+* This PHP script uses phpmailer to send you an email (included).
+* Requires the use of cron or something similar.

@@ -1,0 +1,20 @@
+Postfix commands:
+=================
+
+# postqueue -p -> mailq -> views pending emails
+# postqueue -f -> Forces to clean the queue
+# postqueue -d id -> Delete/Discard email with that id
+# postsuper -d ALL -> Deletes/Discards all email in the queue
+# postsuper -r id -> Delivers email with that id
+# postsuper -r ALL -> Delivers all mails in the queue
+
+
+Notifying spam:
+===============
+
+$ spamassassin -r < message.txt
+
+First an account in razor is needed:
+
+$ /usr/bin/razor-admin -create
+$ /usr/bin/razor-report -register
