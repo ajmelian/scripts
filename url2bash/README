@@ -1,0 +1,7 @@
+url2bash
+========
+
+It executes the commands present in a web.
+I lost the one line version of this script :|
+
+Configure the URL, use cron and appropiate permissions :)
