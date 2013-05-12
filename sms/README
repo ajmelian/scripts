@@ -1,0 +1,37 @@
+SMS
+===
+
+Script sencillísimo para mandar SMS a través de OVH España o bien 
+a través de cualquier clon de betamax tipo freevoipdeal.
+
+Para usarlo debes cambiar los usuarios/claves/números por defecto
+en el archivo sms.php.
+
+Útil para integrarlo con un copia-pega rápido en una función para 
+tu web.
+
+Las funciones han sido extraídas de las webs de ambos servicios.
+
+Puede que integre más webs y haga una función decente si tengo 
+oportunidad de probar más servicios.
+
+SMS
+===
+
+Very simple script to send SMS via:
+
+* OVH (http://www.ovh.es)
+* Betamax clones (for example: freevoipdeal.com)
+
+You need to open sms.php and edit the parameters.
+
+This script is a short version of one that had my contacts 
+in a sqlite DB.
+
+Useful to copy and paste in a function to send SMS for your web.
+
+I claim no copyright since the functions have been extracted from
+their respective webs.
+
+Maybe I will make a decent function provided that I test more 
+services.
