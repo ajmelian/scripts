@@ -4,7 +4,7 @@
 
 int main(int argc, char *argv[]){
 
-    #It needs +s
+    //It needs +s
     setuid(0);
     setgid(0);
 	
