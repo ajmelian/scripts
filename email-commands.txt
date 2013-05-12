@@ -18,3 +18,13 @@ First an account in razor is needed:
 
 $ /usr/bin/razor-admin -create
 $ /usr/bin/razor-report -register
+
+Script version:
+
+cd $HOME/Maildir/.SPAM.SPAM/cur/
+for mailfile in $(ls .)
+do
+  spamassassin -r < $mailfile
+done
+cd -
+
