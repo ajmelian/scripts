@@ -1,0 +1,50 @@
+minicaptiveportal
+=================
+
+WARNING: This is *just a template* I've removed all my configuration files 
+so you will have to adapt (or make again) the captive portal.
+
+I used this minimal captive portal at home in an open subnet. It worked fine, 
+however you have to configure it (like making it again, this is a template) to 
+fit your needs. I've removed all my concrete configurations.
+
+You must know about iptables and make your own scripts.
+
+Basis:
+
+1) Copy this directory to your web folder. You can serve this web using the default 
+apache VirtualHost, so it will serve this page by default no matter what domain 
+you request. Remember to use 404.html as your default 404 error page!
+
+2) Redirect all the requests to this host and port (Example: 192.168.0.1:80)
+
+ # /sbin/iptables -t nat -A PREROUTING -i $INTERFACE -p tcp --dport 80 -j DNAT --to-destination 192.168.0.1:80
+
+Considering you have 3 interfaces: Internet, Network 1 (trusted) and Network 2 (untrusted)
+ # iptables --table nat --append POSTROUTING --out-interface $OUT_INTERFACE -j MASQUERADE
+ # iptables --append FORWARD --in-interface $IN_INTERFACE -j ACCEPT
+
+3) You have a script to redirect validated IPs to internet instead of this host.
+For example:
+ # iptables -A FORWARD -s $IP_ADDRESS -i $INTERFACE -j ACCEPT
+
+Remember to add this rule at the begining.
+
+4) Edit navigate.c to add the iptables line or call an external script.
+
+5) Compile navigate.c and put it out of the web server. Give it +s 
+(chmod) and chown it to root.root.
+
+gcc -onavigate navigate.c
+# chown root.root navigate
+# chmod +s navigate
+
+6) Edit login.php to add your own authentication system.
+
+The theory: When you log in, the server executes the command that calls a program 
+with the sticky bit on it, so the program can add new rules to your firewall.
+
+You can also use a script instead of a program, but I was trying setuid and setguid 
+in C :)
+
+Yes, the real trick are the iptables rules. I repeat: this is just a template.
