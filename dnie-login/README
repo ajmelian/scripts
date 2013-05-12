@@ -1,0 +1,19 @@
+Login con DNIE
+--------------
+
+Este script en PHP en un ejemplo de cómo se puede hacer de modo simple y sin
+requerir la instalación de ningún plugin java ni nada raro la autenticación con
+el nuevo dni electrónico español: http://dnielectronico.es/
+
+Comprueba que el certificado sea válido y no haya sido revocado.
+
+Para que funcione hay que tener instalado apache + PHP + openssl + copiar el 
+directorio de la autoridad certificadora a /etc/apache/sslkeys/
+
+Hay varias funciones cogidas de varios sitios, hay algunas modificaciones hechas
+por mí, por lo que no pongo ninguna licencia a este experimento.
+
+Ojo, este script crea archivos temporales, cuidado en los hostings compartidos
+para no dejar datos personales sensibles sueltos por ahí.
+
+Recomiendo leer el foro de kriptópolis dedicado al dnie :)
