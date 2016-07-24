@@ -1,0 +1,3 @@
+This is a simple test, made long time ago, based on a third party library (MD5.js).
+
+It allows you to implement a two factor authentication with OTP codes.
